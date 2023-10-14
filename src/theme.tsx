@@ -1,7 +1,5 @@
 import { theme as chakraTheme } from '@chakra-ui/react'
 
-const fonts = { ...chakraTheme.fonts, mono: `'Menlo', monospace` }
-
 const breakpoints = ['40em', '52em', '64em']
 
 const theme = {
@@ -16,7 +14,10 @@ const theme = {
     body: `'Hubballi', sans-serif`,
     mono: "Menlo, monospace",
   },
-  breakpoints
+  breakpoints,
+  config: {
+    initialColorMode: "light",
+  }
 }
 
 export default theme
