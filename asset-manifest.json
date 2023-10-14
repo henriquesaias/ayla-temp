@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/ayla-temp/static/css/main.efad5026.css",
-    "main.js": "/ayla-temp/static/js/main.1de1c0f7.js",
+    "main.css": "/ayla-temp/static/css/main.2abd79f4.css",
+    "main.js": "/ayla-temp/static/js/main.d8245812.js",
     "static/js/787.90b04df4.chunk.js": "/ayla-temp/static/js/787.90b04df4.chunk.js",
     "index.html": "/ayla-temp/index.html",
-    "main.efad5026.css.map": "/ayla-temp/static/css/main.efad5026.css.map",
-    "main.1de1c0f7.js.map": "/ayla-temp/static/js/main.1de1c0f7.js.map",
+    "main.2abd79f4.css.map": "/ayla-temp/static/css/main.2abd79f4.css.map",
+    "main.d8245812.js.map": "/ayla-temp/static/js/main.d8245812.js.map",
     "787.90b04df4.chunk.js.map": "/ayla-temp/static/js/787.90b04df4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.efad5026.css",
-    "static/js/main.1de1c0f7.js"
+    "static/css/main.2abd79f4.css",
+    "static/js/main.d8245812.js"
   ]
 }
