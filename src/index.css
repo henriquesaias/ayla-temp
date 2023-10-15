@@ -49,12 +49,19 @@ body {
 @media (min-width: 800px) {
   .banners-container {
     display: grid;
-    grid-auto-flow: column;
+    grid-auto-flow: row;
     grid-template-rows: 50vh 50vh;
     grid-template-columns: 50vw 50vw;
   }
 
   .home-banners {
     padding: 2em;
+  }
+
+  #join-button {
+    position: absolute;
+    top: 0;
+    left:0;
+    transform: translate(-50%, -85%);
   }
 } 

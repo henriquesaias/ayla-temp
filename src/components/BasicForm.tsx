@@ -1,26 +1,26 @@
-import React, { useState } from "react";
+import React from "react";
 import emailjs from '@emailjs/browser';
 import {
   FormControl,
   FormLabel,
   FormErrorMessage,
-  FormHelperText,
   Input,
   Button,
   Grid,
   Checkbox,
   CheckboxGroup,
   Stack,
+  Textarea,
 } from "@chakra-ui/react";
 import { Field, Formik } from "formik";
 
-const BasicForm: React.FC = () => {
+const BasicForm: React.FC<any> = ({ setCompleted }: any) => {
   const howToContribute = [
     { value: 'direct', text: 'Donate directly' },
     { value: 'song', text: 'Submit a song' },
     { value: 'tickets', text: 'Percentage of tickets' },
     { value: 'royalties', text: 'Royalty share' },
-    { value: 'partner', text: 'Become a partner' },
+    { value: 'partner', text: 'Become an official partner' },
     { value: 'other', text: 'Other' }
   ]
 
@@ -59,12 +59,13 @@ const BasicForm: React.FC = () => {
         royalties: false,
         partner: false,
         other: false,
-        howOther: ''
+        howOther: '',
+        finalWords: ''
       }}
       onSubmit={(values, actions) => {
         emailjs.send('service_avldh1k', 'template_4qep82w', values, 'user_i3doLEc81aiVPkLWcqVLx')
           .then((result) => {
-            console.log(result.text);
+            setCompleted(true)
           }, (error) => {
             console.log(error.text);
           });
@@ -119,7 +120,7 @@ const BasicForm: React.FC = () => {
                 return (
                   <Field key={value} name={value}>
                     {({ field }: any) => (
-                      <Checkbox colorScheme="teal" {...field} name={value} value={value}>{text}</Checkbox>
+                      <Checkbox colorScheme="green" {...field} name={value} value={value}>{text}</Checkbox>
                     )}
                   </Field>
                 )
@@ -138,10 +139,20 @@ const BasicForm: React.FC = () => {
             </Field>
             : ''
           }
+
+          <Field name="finalWords">
+            {({ field, form }: any) => (
+              <FormControl>
+                <FormLabel htmlFor="finalWords">Message</FormLabel>
+                <Textarea {...field} id="finalWords" placeholder="Any extra words?" />
+                <FormErrorMessage>{form.errors.finalWords}</FormErrorMessage>
+              </FormControl>
+            )}
+          </Field>
           <Button
             mt={4}
             width='100%'
-            colorScheme="teal"
+            colorScheme="green"
             isLoading={props.isSubmitting}
             type="submit"
           >
